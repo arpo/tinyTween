@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Animate with ease</title>
+    <style>
+        #d1 {
+            position: absolute;
+            left: 10px;
+            top: 100px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+        }
+
+        #d2 {
+            position: absolute;
+            left: 800px;
+            top: 300px;
+            width: 50px;
+            height: 50px;
+            background-color: #00ff00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="d1"></div>
+    <div id="d2"></div>
+
+    <script src="tinyTween.js" charset="utf-8"></script>
+    <script src="tinyTweenUtils.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        //First catch the elemet to tween.
+        var $el = document.getElementById('d1')
+
+        //Then set up the tween.
+        /*
+        tw.tween(10, 600, 0.8, function(data) {
+            //Do your stuff on the tick callback.
+            $el.style.left = data.val + 'px';
+        }, function() {
+            console.log('Complete!!');
+        });
+        */
+
+
+        //Or use the utils
+        /*
+        tw.x('#d1', {
+            to: 600,
+            yoyo: true
+        });
+
+        tw.y('#d1', {
+            to: 300
+        });
+
+        tw.scale('#d1', {
+            to: 3
+        });
+
+        tw.rotate('#d1', {
+            to: 180
+        });
+
+        */
+
+        tw.rotate('#d2', {
+            to: 360,
+            dur: 3,
+            loop: true
+        });
+
+        //Or use the que.
+        var tl = new tw.Q({
+            onComplete: function() {
+                tl.play();
+            }
+        });
+
+        tl.add({t: '#d1', what: 'x', to: 200, dur: 0.3});
+        tl.add({t: '#d1', what: 'y', to: 200, dur: 0.3});
+        tl.add({t: '#d1', what: 'scale', to: 1.4, dur: 0.3});
+        tl.add({t: '#d1', what: 'rotate', to: 360, dur: 0.6});
+        tl.add({t: '#d1', what: 'opacity', to: 0, dur: 0.3});
+        tl.add({t: '#d1', what: 'opacity', to: 1, dur: 0.5});
+
+        tl.add({t: '#d1', what: 'x', to: 10, dur: 0.3});
+        tl.add({t: '#d1', what: 'y', to: 10, dur: 0.3});
+        tl.add({t: '#d1', what: 'scale', to: 1, dur: 0.3});
+        tl.add({t: '#d1', what: 'rotate', to: -360, dur: 0.6});
+
+        tl.play();
+        
+    </script>
+</body>
+
+</html>
