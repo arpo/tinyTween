@@ -16,10 +16,10 @@
 
         #d2 {
             position: absolute;
-            left: 800px;
-            top: 300px;
-            width: 50px;
-            height: 50px;
+            left: 150px;
+            top: 250px;
+            width: 100px;
+            height: 100px;
             background-color: #00ff00;
         }
     </style>
@@ -47,12 +47,10 @@
         });
         */
 
-
         //Or use the utils
         /*
         tw.x('#d1', {
-            to: 600,
-            yoyo: true
+            to: 600
         });
 
         tw.y('#d1', {
@@ -71,8 +69,7 @@
 
         tw.rotate('#d2', {
             to: 360,
-            dur: 3,
-            loop: true
+            dur: 3
         });
 
         //Or use the que.
@@ -82,8 +79,8 @@
             }
         });
 
-        tl.add({t: '#d1', what: 'x', to: 200, dur: 0.3});
-        tl.add({t: '#d1', what: 'y', to: 200, dur: 0.3});
+        tl.add({t: '#d1', what: 'x', to: 400, dur: 0.3});
+        tl.add({t: '#d1', what: 'y', to: 400, dur: 0.3});
         tl.add({t: '#d1', what: 'scale', to: 1.4, dur: 0.3});
         tl.add({t: '#d1', what: 'rotate', to: 360, dur: 0.6});
         tl.add({t: '#d1', what: 'opacity', to: 0, dur: 0.3});

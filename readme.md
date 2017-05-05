@@ -34,8 +34,7 @@ I also created tinyTweenUtils with utils to make some recurrent actions easier t
 Example:
 
     tw.x('#d1', {
-        to: 600,
-        yoyo: true
+        to: 600
     });
 
     tw.y('#d1', {
