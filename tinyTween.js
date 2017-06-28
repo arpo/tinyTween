@@ -40,6 +40,21 @@ tw.TwO.prototype.fn = function(scope) {
 
 };
 
+
+tw.TwO.prototype.seek = function(n) {
+
+    var that = this;
+    that.prog = n;
+    that.time = that.dur * that.prog;
+    that.val = tw.ease.easeInOut(that.prog * that.dur, that.from, that.prog * (that.to - that.from), that.dur);
+
+    that.onStep({
+        prog: that.prog,
+        val: that.val
+    });
+
+};
+
 tw.TwO.prototype.kill = function() {
 
     var that = this,

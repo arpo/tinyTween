@@ -21,12 +21,15 @@ Example:
     var $el = document.getElementById('d1')
 
     //Then set up the tween.
-    tw.tween(10, 600, 0.8, function(data) {
+    var myTw = tw.tween(10, 600, 0.8, function(data) {
         //Do your stuff on the tick callback.
         $el.style.left = data.val + 'px';
     }, function() {
         console.log('Complete!!');
     });
+
+    //Seek like this
+    myTw.seek(0.5);
 
 
 I also created tinyTweenUtils with utils to make some recurrent actions easier to do.
